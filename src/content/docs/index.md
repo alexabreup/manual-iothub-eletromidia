@@ -3,9 +3,10 @@ title: Documentação IOTHUB
 description: Guia completo para utilização da plataforma IOTHUB
 template: splash
 hero:
-  tagline: Documentação completa para operação da plataforma IOTHUB
+  tagline:  
   image:
-    src: /src/assets/logo.svg
+    src: ../../assets/logo.svg
+    file: ../../assets/images/capa-iothub-manual.png
     alt: Logo IOTHUB
   actions:
     - text: Manual SMART RÉGUA

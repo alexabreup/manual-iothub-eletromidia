@@ -12,9 +12,7 @@ export default defineConfig({
       logo: {
         src: './src/assets/logo.svg',
       },
-      social: {
-        github: 'https://github.com/alexabreup/manual-smartruler-v1',
-      },
+      social: {},
       sidebar: [
         {
           label: 'Guia de Operação',
@@ -26,6 +24,10 @@ export default defineConfig({
       customCss: [
         './src/styles/custom.css',
       ],
+      components: {
+        ThemeProvider: './src/components/ForceLightTheme.astro',
+        ThemeSelect: './src/components/EmptyComponent.astro',
+      },
     }),
   ],
 });

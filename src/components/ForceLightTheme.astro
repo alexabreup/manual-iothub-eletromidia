@@ -1,0 +1,16 @@
+---
+---
+<html data-theme="light">
+  <head>
+    <script>
+      // Força tema claro em runtime, ignorando preferências do usuário
+      document.documentElement.dataset.theme = 'light';
+      try {
+        localStorage.setItem('starlight:theme', 'light');
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
