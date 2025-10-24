@@ -1,83 +1,459 @@
+/* Forçar apenas tema light e cores da Eletromidia */
 :root {
-  /* Cores principais da Eletromidia Smart Ruler */
+  /* Cores principais da Eletromidia */
   --sl-color-accent-low: #ff5e0015;
   --sl-color-accent: #ff5e00;
   --sl-color-accent-high: #cc4a00;
-  --sl-font-system: 'Segoe UI', system-ui, sans-serif;
-  
-  /* Cores de texto e fundo */
   --sl-color-text-accent: #ff5e00;
-  --sl-color-bg: #ffffff;
-  --sl-color-text: #333333;
 }
 
-:root[data-theme='light'] {
-  --sl-color-accent-low: #ff5e0020;
-  --sl-color-accent: #ff5e00;
-  --sl-color-accent-high: #cc4a00;
-  --sl-color-bg: #ffffff;
-  --sl-color-gray-1: #f6f6f6;
-  --sl-color-gray-2: #f0f0f0;
-}
-
+/* Garantir que o tema escuro nunca seja aplicado */
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #ff5e0030;
-  --sl-color-accent: #ff7a30;
-  --sl-color-accent-high: #ff9960;
-  --sl-color-bg: #121212;
-  --sl-color-gray-1: #1e1e1e;
-  --sl-color-gray-2: #2a2a2a;
+  /* Forçar cores do tema claro mesmo quando dark é detectado */
+  --sl-color-bg: #ffffff !important;
+  --sl-color-text: #383838 !important;
+  --sl-color-gray-1: #f6f6f6 !important;
+  --sl-color-gray-2: #eeeeee !important;
+  --sl-color-gray-3: #c2c2c2 !important;
+  --sl-color-gray-4: #8b8b8b !important;
+  --sl-color-gray-5: #585858 !important;
+  --sl-color-gray-6: #383838 !important;
+  --sl-color-bg-nav: #ffffff !important;
+  --sl-color-bg-sidebar: #fafafa !important;
+  --sl-color-bg-inline-code: #f1f1f1 !important;
 }
 
-.expressive-code .frame {
-  --ec-border-radius: 0.5rem;
+/* Ajustes de tipografia para manter padrão Starlight */
+.sl-markdown-content h2 {
+  color: var(--sl-color-accent);
+  border-bottom: 1px solid var(--sl-color-gray-2);
+  padding-bottom: 0.5rem;
 }
 
+.sl-markdown-content h3 {
+  color: var(--sl-color-accent);
+}
+
+/* Manter espaçamento padrão do Starlight */
+.sl-markdown-content > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Hero image styling - mais sutil */
 .hero img {
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
 }
 
-/* Estilo de tabelas como no site de referência */
-table {
-  width: 100%;
+/* Tabelas com estilo Starlight */
+.sl-markdown-content table {
   border-collapse: collapse;
   margin: 1.5rem 0;
+  border: 1px solid var(--sl-color-gray-2);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-th {
+.sl-markdown-content th {
   background-color: var(--sl-color-accent);
   color: white;
   font-weight: 600;
   text-align: left;
   padding: 0.75rem 1rem;
+  border: none;
 }
 
-td {
+.sl-markdown-content td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--sl-color-gray-2);
+  border-right: 1px solid var(--sl-color-gray-2);
 }
 
-tr:nth-child(even) {
+.sl-markdown-content td:last-child {
+  border-right: none;
+}
+
+.sl-markdown-content tr:nth-child(even) {
   background-color: var(--sl-color-gray-1);
 }
 
-/* Estilo para títulos de seção */
-h2, h3 {
+/* Imagens no conteúdo - estilo mais sutil */
+.sl-markdown-content img {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Links com cor de destaque */
+.sl-markdown-content a {
   color: var(--sl-color-accent);
-  margin-top: 2rem;
 }
 
-/* Estilo para listas numeradas como no site de referência */
-ol li {
-  margin-bottom: 0.75rem;
+.sl-markdown-content a:hover {
+  color: var(--sl-color-accent-high);
 }
 
-/* Estilo para cards e blocos de destaque */
-.content-card {
-  background-color: var(--sl-color-gray-1);
+/* Listas com espaçamento padrão */
+.sl-markdown-content ol li,
+.sl-markdown-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.sl-markdown-content blockquote {
   border-left: 4px solid var(--sl-color-accent);
+  background-color: var(--sl-color-gray-1);
   padding: 1rem;
   margin: 1.5rem 0;
   border-radius: 0 4px 4px 0;
+}
+/* Ocultar o seletor de tema */
+starlight-theme-select {
+  display: none !important;
+}
+
+/* Garantir que sempre use tema light */
+html[data-theme='dark'] {
+  color-scheme: light !important;
+}
+
+html[data-theme='dark'] *,
+html[data-theme='dark'] body,
+html[data-theme='dark'] .content-panel,
+html[data-theme='dark'] .sidebar {
+  color-scheme: light !important;
+  background-color: var(--sl-color-bg) !important;
+  color: var(--sl-color-text) !important;
+}
+
+/* Forçar cores de texto legíveis */
+.sl-markdown-content,
+.sl-markdown-content p,
+.sl-markdown-content li,
+.sl-markdown-content span {
+  color: var(--sl-color-text) !important;
+}
+
+/* Garantir contraste adequado para títulos */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6 {
+  color: var(--sl-color-gray-6) !important;
+}
+
+/* Ajustes específicos para manter consistência */
+.content-panel {
+  background-color: var(--sl-color-bg);
+}
+
+/* Sidebar com fundo mais claro */
+.sidebar {
+  background-color: var(--sl-color-bg-sidebar);
+}
+
+/* Cards com estilo mais sutil */
+.card {
+  border: 1px solid var(--sl-color-gray-2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Correções específicas para legibilidade */
+.sl-container,
+.content-panel,
+.main-frame,
+.sidebar-content,
+.sidebar-pane {
+  background-color: #ffffff !important;
+  color: #383838 !important;
+}
+
+/* Garantir que todos os textos sejam escuros e legíveis */
+body *,
+.sl-markdown-content *,
+.sidebar *,
+nav *,
+header *,
+main * {
+  color: #383838 !important;
+}
+
+/* Exceções para elementos que devem manter cores específicas */
+.sl-markdown-content a,
+.sl-markdown-content a *,
+button,
+.sl-nav-link[aria-current="page"],
+.sl-sidebar-item[aria-current="page"] > a {
+  color: #ff5e00 !important;
+}
+
+/* Títulos com cor de destaque */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  color: #ff5e00 !important;
+}
+
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6 {
+  color: #383838 !important;
+}
+
+/* Garantir fundo branco para todos os containers */
+html,
+body,
+#starlight__sidebar,
+#starlight__main,
+.content-panel,
+.main-pane {
+  background-color: #ffffff !important;
+}
+
+/* Remover qualquer sombra ou efeito que possa estar ocultando conteúdo */
+* {
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* Restaurar box-shadow apenas onde necessário */
+.sl-markdown-content img,
+.hero img,
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+/
+* Correções específicas para substituir cores azuis por laranja da Eletromidia */
+
+/* Links ativos na sidebar e navegação */
+:where(.astro-3ii7xxms)[aria-current=page], 
+:where(.astro-3ii7xxms)[aria-current=page]:hover, 
+:where(.astro-3ii7xxms)[aria-current=page]:focus {
+  font-weight: 600 !important;
+  color: white !important;
+  background-color: #ff5e00 !important;
+}
+
+/* Todos os links ativos */
+[aria-current="page"],
+[aria-current="page"]:hover,
+[aria-current="page"]:focus {
+  color: white !important;
+  background-color: #ff5e00 !important;
+}
+
+/* Links na sidebar */
+.sl-sidebar-item[aria-current="page"] > a,
+.sl-sidebar-item[aria-current="page"] > a:hover,
+.sl-sidebar-item[aria-current="page"] > a:focus {
+  color: white !important;
+  background-color: #ff5e00 !important;
+}
+
+/* Links de navegação */
+.sl-nav-link[aria-current="page"],
+.sl-nav-link[aria-current="page"]:hover,
+.sl-nav-link[aria-current="page"]:focus {
+  color: white !important;
+  background-color: #ff5e00 !important;
+}
+
+/* Botões primários */
+.sl-button[data-variant="primary"],
+button[data-variant="primary"],
+.hero .sl-button[data-variant="primary"] {
+  background-color: #ff5e00 !important;
+  border-color: #ff5e00 !important;
+  color: white !important;
+}
+
+.sl-button[data-variant="primary"]:hover,
+button[data-variant="primary"]:hover,
+.hero .sl-button[data-variant="primary"]:hover {
+  background-color: #cc4a00 !important;
+  border-color: #cc4a00 !important;
+}
+
+/* Links em geral */
+a:not(.sl-button) {
+  color: #ff5e00 !important;
+}
+
+a:not(.sl-button):hover {
+  color: #cc4a00 !important;
+}
+
+/* Elementos de foco */
+:focus-visible {
+  outline-color: #ff5e00 !important;
+}
+
+/* Elementos com cor de destaque */
+.sl-color-accent,
+.text-accent {
+  color: #ff5e00 !important;
+}
+
+/* Bordas de destaque */
+.border-accent {
+  border-color: #ff5e00 !important;
+}
+
+/* Fundos de destaque */
+.bg-accent {
+  background-color: #ff5e00 !important;
+}
+
+/* Substituir qualquer cor azul restante */
+*[style*="color: blue"],
+*[style*="color: #0000ff"],
+*[style*="color: #007acc"],
+*[style*="color: rgb(0, 122, 204)"] {
+  color: #ff5e00 !important;
+}
+
+/* Garantir que elementos específicos do Starlight usem laranja */
+.starlight-aside--tip {
+  border-color: #ff5e00 !important;
+}
+
+.starlight-aside--tip .starlight-aside__title {
+  color: #ff5e00 !important;
+}
+
+/* Cards e componentes */
+.card-title,
+.card h3,
+.card h4 {
+  color: #ff5e00 !important;
+}
+
+/* Ícones de destaque */
+.icon-accent,
+svg[fill*="blue"],
+svg[fill*="#007acc"] {
+  fill: #ff5e00 !important;
+}
+
+/* Elementos de formulário */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ff5e00 !important;
+  outline-color: #ff5e00 !important;
+}
+
+/* Elementos de navegação breadcrumb */
+.breadcrumb a {
+  color: #ff5e00 !important;
+}
+
+.breadcrumb a:hover {
+  color: #cc4a00 !important;
+}
+
+/* Table of contents */
+.toc a {
+  color: #ff5e00 !important;
+}
+
+.toc a:hover {
+  color: #cc4a00 !important;
+}
+
+/* Elementos ativos no TOC */
+.toc [aria-current="true"] {
+  color: #ff5e00 !important;
+  font-weight: 600 !important;
+}
+
+/* Correção específica para botões primários do hero */
+.sl-link-button:where(.astro-xwgiixxa).primary,
+.sl-link-button.primary,
+a.sl-link-button.primary {
+  background: #ff5e00 !important;
+  border-color: #ff5e00 !important;
+  color: white !important;
+}
+
+.sl-link-button:where(.astro-xwgiixxa).primary:hover,
+.sl-link-button.primary:hover,
+a.sl-link-button.primary:hover {
+  background: #cc4a00 !important;
+  border-color: #cc4a00 !important;
+  color: white !important;
+}
+
+/* Garantir que o texto e ícones dentro do botão sejam brancos */
+.sl-link-button.primary *,
+.sl-link-button.primary svg {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Botões do hero section */
+.hero .sl-link-button.primary,
+.hero a[data-variant="primary"] {
+  background-color: #ff5e00 !important;
+  border-color: #ff5e00 !important;
+  color: white !important;
+}
+
+.hero .sl-link-button.primary:hover,
+.hero a[data-variant="primary"]:hover {
+  background-color: #cc4a00 !important;
+  border-color: #cc4a00 !important;
+  color: white !important;
+}
+
+/* Garantir que todos os elementos dentro dos botões primários sejam brancos */
+.hero .sl-link-button.primary *,
+.hero .sl-link-button.primary svg,
+.hero a[data-variant="primary"] *,
+.hero a[data-variant="primary"] svg {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Classe específica encontrada no HTML */
+.astro-jbfsktt5.astro-xwgiixxa.primary,
+.not-content.primary {
+  background: #ff5e00 !important;
+  border-color: #ff5e00 !important;
+  color: white !important;
+}
+
+.astro-jbfsktt5.astro-xwgiixxa.primary:hover,
+.not-content.primary:hover {
+  background: #cc4a00 !important;
+  border-color: #cc4a00 !important;
+  color: white !important;
+}
+
+/* Garantir contraste adequado para todos os botões primários */
+[data-variant="primary"],
+.primary {
+  background-color: #ff5e00 !important;
+  border-color: #ff5e00 !important;
+  color: white !important;
+}
+
+[data-variant="primary"]:hover,
+.primary:hover {
+  background-color: #cc4a00 !important;
+  border-color: #cc4a00 !important;
+  color: white !important;
+}
+
+/* Ícones dentro de botões primários */
+[data-variant="primary"] svg,
+.primary svg {
+  fill: white !important;
+  color: white !important;
 }

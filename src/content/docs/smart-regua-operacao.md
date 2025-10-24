@@ -15,12 +15,12 @@ Siga estes passos para iniciar:
 
 1.  No menu principal (lado esquerdo da plataforma IOTHUB), localize a listagem dos componentes. 
 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-1.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-1.png)
 
 
 2.  Selecione a opção **"SMART RÉGUA"** para acessar a lista de dispositivos. 
 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-2.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-2.png)
 
 
 
@@ -38,7 +38,7 @@ Verifique as informações do dispositivo por meio dos seguintes campos na lista
 * **MAC Address** 
 * **Data e Hora de Registro** 
 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-3.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-3.png)
 
 
 ### Observação sobre o Cadastro Automático 
@@ -46,7 +46,7 @@ Se o campo **"Nome, SEP e Endereço"** exibir o status **"Sem Dispositivo Associ
 
 O cadastro é realizado automaticamente após a instalação física da SMART RÉGUA no equipamento: ela se vinculará ao NUC e importará as informações de identificação (Nome, SEP e Endereço) para a plataforma. 
 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-4.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-4.png)
 
 
 --- 
@@ -66,19 +66,19 @@ O comando de reset pode ser executado de duas formas:
 
 1.  **Pela Listagem Principal (Ações Rápidas):** 
     * Na linha da régua desejada, localize os botões de Reset (ícones de energia) nas colunas **MODEM** ou **NUC**. 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-6.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-6.png)
 
 2.  **Pela Página de Detalhes (Botões Superiores):** 
     * Utilize os botões **Reset Modems** ou **Reset Nucs** localizados no topo da página de detalhes da régua (acessada pelo ícone "Olho"). 
 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-5.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-5.png)
 
 
 ### Confirmação 
 1.  Ao acionar o comando, o sistema solicitará a confirmação: **"Confirmar Envio do comando"**. 
 2.  Clique em **"Sim, Enviar"** para iniciar a operação. 
 
-![Menu principal do IOTHUB](/src/assets/images/manual-iothub-7.png)
+![Menu principal do IOTHUB](../../assets/images/manual-iothub-7.png)
 
 --- 
 
@@ -86,13 +86,13 @@ O comando de reset pode ser executado de duas formas:
 
 O botão **"AÇÕES"** (lado direito da plataforma) permite acessar as informações e comandos avançados da régua. 
 
-![Ações](/src/assets/images/manual-iothub-8.png)
+![Ações](../../assets/images/manual-iothub-8.png)
 
 ### Ícone de Informações (`i`) 
 Ao clicar no ícone de "Informações", você terá acesso a um resumo do dispositivo, incluindo o histórico de comandos executados. 
-![Informações](/src/assets/images/manual-iothub-9.png)
+![Informações](../../assets/images/manual-iothub-9.png)
 Após clicar no ícone de "Informações", aparecerá o painel registrado abaixo, com os dados respectivos do dispositivo.
-![Painel com as informações do dispositivo](/src/assets/images/manual-iothub-10.png)
+![Painel com as informações do dispositivo](../../assets/images/manual-iothub-10.png)
 
 
 ### Ícone de Visualização (`Olho`) 
@@ -101,7 +101,7 @@ Este ícone abre a **página detalhada da SMART RÉGUA**. Nesta página, é poss
 * Consultar dados detalhados e históricos do equipamento. 
 * Executar ações de reinicialização (Resetar Modem/NUC). 
 * Controlar o estado da **Tomada** (Liga/Desliga) do equipamento vinculado. 
-![Painel de controle do dispositivo](/src/assets/images/manual-iothub-11.png)
+![Painel de controle do dispositivo](../../assets/images/manual-iothub-11.png)
 
 --- 
 

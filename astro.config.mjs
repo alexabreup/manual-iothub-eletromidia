@@ -1,19 +1,32 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://alexabreup.github.io/manual-iothub-eletromidia',
+  site: 'https://your-site-name.netlify.app',
   integrations: [
-    sitemap(),
     starlight({
       title: 'Manual IOTHUB - SMART RÉGUA',
       description: 'Guia de Utilização da Plataforma IOTHUB',
+      defaultLocale: 'root',
+      locales: {
+        root: {
+          label: 'Português',
+          lang: 'pt-BR',
+        },
+      },
       logo: {
         src: './src/assets/logo.svg',
       },
-      social: {},
+      social: {
+        github: 'https://github.com/alexabreup/manual-iothub-eletromidia',
+      },
       sidebar: [
+        {
+          label: 'Documentação',
+          items: [
+            { label: 'Início', link: '/' },
+          ],
+        },
         {
           label: 'Guia de Operação',
           items: [
@@ -25,8 +38,12 @@ export default defineConfig({
         './src/styles/custom.css',
       ],
       components: {
-        ThemeProvider: './src/components/ForceLightTheme.astro',
-        ThemeSelect: './src/components/EmptyComponent.astro',
+        Head: './src/components/ForceLightTheme.astro',
+      },
+      disable404Route: false,
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
       },
     }),
   ],
