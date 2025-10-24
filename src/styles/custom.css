@@ -1,0 +1,83 @@
+:root {
+  /* Cores principais da Eletromidia Smart Ruler */
+  --sl-color-accent-low: #ff5e0015;
+  --sl-color-accent: #ff5e00;
+  --sl-color-accent-high: #cc4a00;
+  --sl-font-system: 'Segoe UI', system-ui, sans-serif;
+  
+  /* Cores de texto e fundo */
+  --sl-color-text-accent: #ff5e00;
+  --sl-color-bg: #ffffff;
+  --sl-color-text: #333333;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #ff5e0020;
+  --sl-color-accent: #ff5e00;
+  --sl-color-accent-high: #cc4a00;
+  --sl-color-bg: #ffffff;
+  --sl-color-gray-1: #f6f6f6;
+  --sl-color-gray-2: #f0f0f0;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #ff5e0030;
+  --sl-color-accent: #ff7a30;
+  --sl-color-accent-high: #ff9960;
+  --sl-color-bg: #121212;
+  --sl-color-gray-1: #1e1e1e;
+  --sl-color-gray-2: #2a2a2a;
+}
+
+.expressive-code .frame {
+  --ec-border-radius: 0.5rem;
+}
+
+.hero img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de tabelas como no site de referência */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th {
+  background-color: var(--sl-color-accent);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--sl-color-gray-2);
+}
+
+tr:nth-child(even) {
+  background-color: var(--sl-color-gray-1);
+}
+
+/* Estilo para títulos de seção */
+h2, h3 {
+  color: var(--sl-color-accent);
+  margin-top: 2rem;
+}
+
+/* Estilo para listas numeradas como no site de referência */
+ol li {
+  margin-bottom: 0.75rem;
+}
+
+/* Estilo para cards e blocos de destaque */
+.content-card {
+  background-color: var(--sl-color-gray-1);
+  border-left: 4px solid var(--sl-color-accent);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
