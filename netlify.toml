@@ -8,12 +8,17 @@
 # Redirecionamentos para páginas de sucesso do formulário
 [[redirects]]
   from = "/contato/sucesso"
-  to = "/sucesso/"
+  to = "/sucesso.html"
   status = 301
 
 [[redirects]]
   from = "/contato/sucesso/"
-  to = "/sucesso/"
+  to = "/sucesso.html"
+  status = 301
+
+[[redirects]]
+  from = "/sucesso/"
+  to = "/sucesso.html"
   status = 301
 
 # Redirecionamento para 404 (deve ser o último)
