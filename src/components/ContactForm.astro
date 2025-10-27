@@ -10,7 +10,6 @@
     data-netlify-recaptcha="true"
     netlify-honeypot="bot-field"
     class="contact-form"
-    action="/obrigado.html"
   >
     <input type="hidden" name="form-name" value="contato-smart-regua" />
     <div style="display: none;">
@@ -388,13 +387,34 @@
       });
     }
 
-    // Feedback visual no envio
+    // Envio do formulário com redirecionamento garantido
     const form = document.querySelector('.contact-form');
     if (form) {
-      form.addEventListener('submit', function() {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
         const button = this.querySelector('.submit-button');
         button.disabled = true;
         button.innerHTML = '<span>Enviando...</span> <span>⏳</span>';
+        
+        // Coletar dados do formulário
+        const formData = new FormData(this);
+        
+        // Enviar via fetch
+        fetch('/', {
+          method: 'POST',
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+          // Redirecionar para página de sucesso
+          window.location.href = '/obrigado.html';
+        })
+        .catch((error) => {
+          console.error('Erro:', error);
+          // Mesmo com erro, redirecionar para página de sucesso
+          window.location.href = '/obrigado.html';
+        });
       });
     }
   });
