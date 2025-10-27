@@ -39,6 +39,6 @@ hero:
 
 ## Sobre a Plataforma IOTHUB
 
-A plataforma IOTHUB (`https://iothub.eletromidia.com.br/`) foi desenvolvida para auxiliar as equipes de operação da **Eletromidia** a gerenciar e monitorar equipamentos de forma eficiente e remota.
+A plataforma <a href="https://iothub.eletromidia.com.br/" target="_blank" rel="noopener noreferrer">IOTHUB</a> foi desenvolvida para auxiliar as equipes de operação da **Eletromidia** a gerenciar e monitorar equipamentos de forma eficiente e remota.
 
 A funcionalidade **SMART RÉGUA** permite solucionar problemas a distância, agilizando o suporte técnico e reduzindo a necessidade de deslocamentos para manutenção presencial.

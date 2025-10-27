@@ -5,7 +5,7 @@ description: Guia completo para utilização da funcionalidade SMART RÉGUA no I
 
 # Funcionalidade SMART RÉGUA no IOTHUB 
 
-Este guia foi criado para auxiliar as equipes de operação da **Eletromidia** a explorar e utilizar a funcionalidade **SMART RÉGUA** de forma eficiente na plataforma **IOTHUB** (`https://iothub.eletromidia.com.br/`). 
+Este guia foi criado para auxiliar as equipes de operação da **Eletromidia** a explorar e utilizar a funcionalidade **SMART RÉGUA** de forma eficiente na plataforma <a href="https://iothub.eletromidia.com.br/" target="_blank" rel="noopener noreferrer">**IOTHUB**</a>. 
 
 A funcionalidade permite que você execute comandos de reinicialização (Reset) remota no NUC e no Modem do equipamento vinculado, agilizando a solução de problemas a distância. 
 
