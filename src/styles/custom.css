@@ -39,10 +39,9 @@
   margin-top: 1.5rem;
 }
 
-/* Hero image styling - mais sutil */
+/* Hero image styling - sem sombra */
 .hero img {
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   height: auto;
 }
@@ -224,9 +223,13 @@ body,
 
 /* Restaurar box-shadow apenas onde necessário */
 .sl-markdown-content img,
-.hero img,
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hero image sem sombra */
+.hero img {
+  box-shadow: none !important;
 }
 /
 * Correções específicas para substituir cores azuis por laranja da Eletromidia */
