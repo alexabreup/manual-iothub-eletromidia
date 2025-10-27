@@ -106,7 +106,13 @@
     </div>
 
     <div class="form-group">
-      <div data-netlify-recaptcha="true"></div>
+      <label>Verificação de Segurança *</label>
+      <div class="recaptcha-container">
+        <div data-netlify-recaptcha="true"></div>
+        <small style="color: var(--sl-color-gray-5); text-align: center; display: block; margin-top: 0.5rem;">
+          Complete a verificação de segurança acima para enviar o formulário
+        </small>
+      </div>
     </div>
 
     <div class="form-group">
@@ -229,27 +235,73 @@
   }
 
   .form-info {
-    background-color: var(--sl-color-gray-1);
-    padding: 1rem;
-    border-radius: 6px;
+    background: linear-gradient(135deg, #f8f4ff, #fff5f0);
+    padding: 1.5rem;
+    border-radius: 8px;
     border-left: 4px solid #ff5e00;
     margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.1);
   }
 
   .form-info p {
     margin: 0.5rem 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    color: #8a2be2 !important; /* Violeta que combina com laranja */
   }
 
   .form-info strong {
-    color: #ff5e00;
+    color: #ff5e00 !important;
+    font-weight: 700;
+  }
+
+  .form-info small {
+    color: #9932cc !important; /* Tom violeta mais claro */
+  }
+
+  /* Container do reCAPTCHA */
+  .recaptcha-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   /* Estilo para o reCAPTCHA */
   .form-group [data-netlify-recaptcha] {
+    display: flex !important;
+    justify-content: center;
+    margin: 0;
+    min-height: 78px; /* Altura mínima do reCAPTCHA */
+    background-color: #f9f9f9;
+    border: 2px dashed var(--sl-color-gray-3);
+    border-radius: 6px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 304px; /* Largura padrão do reCAPTCHA */
+  }
+
+  /* Garantir que o reCAPTCHA seja visível */
+  .g-recaptcha {
+    margin: 0 auto !important;
+  }
+
+  /* Estilo para quando o reCAPTCHA carrega */
+  .form-group [data-netlify-recaptcha]:empty::before {
+    content: "🔒 Carregando verificação de segurança...";
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    align-items: center;
+    color: var(--sl-color-gray-5);
+    font-size: 0.9rem;
+    min-height: 78px;
+    width: 100%;
+  }
+
+  /* Quando o reCAPTCHA carrega, remover o fundo */
+  .form-group [data-netlify-recaptcha]:not(:empty) {
+    background-color: transparent;
+    border: none;
+    padding: 0;
   }
 
   /* Responsividade */
