@@ -57,4 +57,22 @@
 [[headers]]
   for = "*.json"
   [headers.values]
-    Content-Type = "application/json; charset=UTF-8"
+    Content-Type = "application/json; charset=UTF-8"# Con
+figurações para formulários
+[[redirects]]
+  from = "/contato/sucesso"
+  to = "/contato/sucesso/"
+  status = 301
+
+# Headers específicos para formulários
+[[headers]]
+  for = "/contato/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; frame-src https://www.google.com; style-src 'self' 'unsafe-inline';"
+
+# Configuração de notificações por email para formulários
+[context.production.environment]
+  NETLIFY_EMAILS_SECRET = "your-secret-key"

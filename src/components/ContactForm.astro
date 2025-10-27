@@ -1,0 +1,349 @@
+---
+// ContactForm.astro
+---
+
+<div class="contact-form-container">
+  <form 
+    name="contato-smart-regua" 
+    method="POST" 
+    data-netlify="true"
+    data-netlify-recaptcha="true"
+    netlify-honeypot="bot-field"
+    class="contact-form"
+    action="/contato/sucesso/"
+  >
+    <input type="hidden" name="form-name" value="contato-smart-regua" />
+    <div style="display: none;">
+      <input name="bot-field" />
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome Completo *</label>
+      <input 
+        type="text" 
+        id="nome" 
+        name="nome" 
+        required 
+        placeholder="Seu nome completo"
+        maxlength="100"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        placeholder="seu.email@empresa.com"
+        maxlength="100"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="empresa">Empresa</label>
+      <input 
+        type="text" 
+        id="empresa" 
+        name="empresa" 
+        placeholder="Nome da sua empresa"
+        maxlength="100"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input 
+        type="tel" 
+        id="telefone" 
+        name="telefone" 
+        placeholder="(11) 99999-9999"
+        maxlength="20"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="assunto">Assunto *</label>
+      <select id="assunto" name="assunto" required>
+        <option value="">Selecione o assunto</option>
+        <option value="suporte-tecnico">🔧 Suporte Técnico</option>
+        <option value="duvida-manual">📖 Dúvida sobre o Manual</option>
+        <option value="problema-smart-regua">⚠️ Problema com SMART RÉGUA</option>
+        <option value="problema-conectividade">🌐 Problema de Conectividade</option>
+        <option value="comando-reset">🔄 Problema com Comando Reset</option>
+        <option value="cadastro-automatico">📝 Cadastro Automático</option>
+        <option value="sugestao">💡 Sugestão de Melhoria</option>
+        <option value="outro">❓ Outro</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="prioridade">Prioridade</label>
+      <select id="prioridade" name="prioridade">
+        <option value="baixa">🟢 Baixa - Dúvida geral</option>
+        <option value="media" selected>🟡 Média - Problema não crítico</option>
+        <option value="alta">🟠 Alta - Problema afeta operação</option>
+        <option value="critica">🔴 Crítica - Sistema inoperante</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="mensagem">Mensagem *</label>
+      <textarea 
+        id="mensagem" 
+        name="mensagem" 
+        required 
+        rows="6"
+        placeholder="Descreva detalhadamente sua dúvida, problema ou sugestão. Inclua informações como:
+- Equipamento afetado (SEP, endereço)
+- Passos que levaram ao problema
+- Mensagens de erro (se houver)
+- Horário em que ocorreu"
+        maxlength="2000"
+      ></textarea>
+      <small class="char-counter">Máximo 2000 caracteres</small>
+    </div>
+
+    <div class="form-group">
+      <div data-netlify-recaptcha="true"></div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="submit-button">
+        <span class="button-text">Enviar Mensagem</span>
+        <span class="button-icon">📧</span>
+      </button>
+    </div>
+
+    <div class="form-info">
+      <p><strong>📧 Suas informações serão enviadas para:</strong> thomas.melo@eletromidia.com.br</p>
+      <p><small>⏱️ Tempo de resposta: até 24 horas úteis</small></p>
+    </div>
+  </form>
+</div>
+
+<style>
+  .contact-form-container {
+    max-width: 700px;
+    margin: 2rem 0;
+    padding: 2rem;
+    border: 1px solid var(--sl-color-gray-2);
+    border-radius: 12px;
+    background-color: var(--sl-color-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--sl-color-text);
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.875rem;
+    border: 2px solid var(--sl-color-gray-3);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: var(--sl-color-bg);
+    color: var(--sl-color-text);
+    font-family: inherit;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #ff5e00;
+    box-shadow: 0 0 0 3px rgba(255, 94, 0, 0.15);
+  }
+
+  .form-group input:hover,
+  .form-group select:hover,
+  .form-group textarea:hover {
+    border-color: var(--sl-color-gray-4);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.5;
+  }
+
+  .char-counter {
+    color: var(--sl-color-gray-5);
+    font-size: 0.85rem;
+    text-align: right;
+  }
+
+  .submit-button {
+    background: linear-gradient(135deg, #ff5e00, #cc4a00);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submit-button:hover {
+    background: linear-gradient(135deg, #cc4a00, #b33d00);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 94, 0, 0.3);
+  }
+
+  .submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 94, 0, 0.4);
+  }
+
+  .submit-button:active {
+    transform: translateY(0);
+  }
+
+  .button-icon {
+    font-size: 1.2rem;
+  }
+
+  .form-info {
+    background-color: var(--sl-color-gray-1);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #ff5e00;
+    margin-top: 1rem;
+  }
+
+  .form-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .form-info strong {
+    color: #ff5e00;
+  }
+
+  /* Estilo para o reCAPTCHA */
+  .form-group [data-netlify-recaptcha] {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.75rem;
+      font-size: 16px; /* Previne zoom no iOS */
+    }
+
+    .submit-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-form-container {
+      padding: 1rem;
+    }
+
+    .submit-button {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .button-icon {
+      font-size: 1rem;
+    }
+  }
+
+  /* Animação de carregamento */
+  .submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: var(--sl-color-gray-4);
+  }
+
+  .submit-button:disabled:hover {
+    transform: none;
+    box-shadow: none;
+  }
+</style>
+
+<script>
+  // Contador de caracteres para textarea
+  document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('mensagem');
+    const counter = document.querySelector('.char-counter');
+    
+    if (textarea && counter) {
+      textarea.addEventListener('input', function() {
+        const remaining = 2000 - this.value.length;
+        counter.textContent = `${this.value.length}/2000 caracteres`;
+        
+        if (remaining < 100) {
+          counter.style.color = '#ff5e00';
+        } else {
+          counter.style.color = 'var(--sl-color-gray-5)';
+        }
+      });
+    }
+
+    // Formatação de telefone
+    const telefone = document.getElementById('telefone');
+    if (telefone) {
+      telefone.addEventListener('input', function() {
+        let value = this.value.replace(/\D/g, '');
+        if (value.length >= 11) {
+          value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        } else if (value.length >= 7) {
+          value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+        } else if (value.length >= 3) {
+          value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+        }
+        this.value = value;
+      });
+    }
+
+    // Feedback visual no envio
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        const button = this.querySelector('.submit-button');
+        button.disabled = true;
+        button.innerHTML = '<span>Enviando...</span> <span>⏳</span>';
+      });
+    }
+  });
+</script>

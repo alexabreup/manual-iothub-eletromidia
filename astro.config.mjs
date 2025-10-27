@@ -29,6 +29,12 @@ export default defineConfig({
           items: [
             { label: 'SMART RÉGUA', link: '/smart-regua-operacao/' }
           ],
+        },
+        {
+          label: 'Suporte',
+          items: [
+            { label: 'Contato', link: '/contato/' }
+          ],
         }
       ],
       customCss: [

@@ -1,0 +1,46 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Contato - Suporte SMART RÉGUA',
+    description: 'Entre em contato com nossa equipe de suporte técnico',
+  }}
+>
+  <div class="sl-markdown-content">
+    <h1>Contato e Suporte</h1>
+    
+    <p>Para dúvidas, sugestões ou suporte técnico relacionado ao <strong>Manual SMART RÉGUA</strong>, entre em contato conosco.</p>
+    
+    <ContactForm />
+    
+    <h2>Informações de Contato</h2>
+    <ul>
+      <li><strong>Email</strong>: <a href="mailto:thomas.melo@eletromidia.com.br">thomas.melo@eletromidia.com.br</a></li>
+      <li><strong>Departamento</strong>: Projetos/Pesquisa e Desenvolvimento</li>
+      <li><strong>Empresa</strong>: Eletromidia</li>
+    </ul>
+    
+    <h2>Horário de Atendimento</h2>
+    <ul>
+      <li><strong>Segunda a Sexta</strong>: 8h às 18h</li>
+      <li><strong>Tempo de resposta</strong>: Até 24 horas úteis</li>
+    </ul>
+    
+    <h2>Tipos de Suporte</h2>
+    
+    <h3>🔧 Suporte Técnico</h3>
+    <p>Problemas com funcionamento da SMART RÉGUA, comandos de reset, conectividade.</p>
+    
+    <h3>📖 Dúvidas sobre o Manual</h3>
+    <p>Esclarecimentos sobre procedimentos, configurações ou funcionalidades.</p>
+    
+    <h3>💡 Sugestões</h3>
+    <p>Ideias para melhorias no manual ou na funcionalidade SMART RÉGUA.</p>
+    
+    <h3>🚨 Problemas Urgentes</h3>
+    <p>Para problemas críticos que afetam operações, entre em contato diretamente por email.</p>
+  </div>
+</StarlightPage>

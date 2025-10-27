@@ -1,0 +1,57 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Mensagem Enviada - Contato',
+    description: 'Sua mensagem foi enviada com sucesso',
+  }}
+>
+  <div class="sl-markdown-content">
+    <h1>✅ Mensagem Enviada com Sucesso!</h1>
+    
+    <p>Obrigado por entrar em contato conosco. Sua mensagem foi recebida e será analisada pela nossa equipe de suporte.</p>
+    
+    <h2>📧 Próximos Passos</h2>
+    <ol>
+      <li><strong>Confirmação</strong>: Você receberá uma confirmação por email em alguns minutos</li>
+      <li><strong>Análise</strong>: Nossa equipe analisará sua solicitação</li>
+      <li><strong>Resposta</strong>: Retornaremos o contato via email: <strong>thomas.melo@eletromidia.com.br</strong></li>
+    </ol>
+    
+    <h2>⏱️ Tempo de Resposta</h2>
+    <ul>
+      <li><strong>Dúvidas gerais</strong>: Até 24 horas úteis</li>
+      <li><strong>Problemas técnicos</strong>: Até 12 horas úteis</li>
+      <li><strong>Problemas críticos</strong>: Até 4 horas úteis</li>
+    </ul>
+    
+    <h2>🔄 Precisa de Mais Ajuda?</h2>
+    <p>Enquanto aguarda nossa resposta, você pode:</p>
+    <ul>
+      <li><a href="/smart-regua-operacao/">📖 Consultar o Manual SMART RÉGUA</a></li>
+      <li><a href="/">🏠 Voltar à Página Inicial</a></li>
+      <li><a href="/contato/">📞 Enviar Nova Mensagem</a></li>
+    </ul>
+    
+    <div style="background-color: var(--sl-color-gray-1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff5e00; margin: 2rem 0;">
+      <h3>🚨 Problemas Urgentes?</h3>
+      <p>Para problemas críticos que afetam operações em andamento, você também pode:</p>
+      <ul>
+        <li><strong>Email direto</strong>: thomas.melo@eletromidia.com.br</li>
+        <li><strong>Assunto</strong>: [URGENTE] Problema SMART RÉGUA - [SEP/Local]</li>
+      </ul>
+    </div>
+    
+    <h2>📊 Informações Úteis para Diagnóstico</h2>
+    <p>Para acelerar o atendimento em futuras solicitações, sempre inclua:</p>
+    <ul>
+      <li><strong>SEP e endereço</strong> do equipamento</li>
+      <li><strong>Horário</strong> em que o problema ocorreu</li>
+      <li><strong>Passos realizados</strong> antes do problema</li>
+      <li><strong>Mensagens de erro</strong> (se houver)</li>
+      <li><strong>Prints de tela</strong> (quando aplicável)</li>
+    </ul>
+  </div>
+</StarlightPage>
