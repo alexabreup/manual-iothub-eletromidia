@@ -12,10 +12,6 @@ hero:
       link: /smart-regua-operacao/
       icon: right-arrow
       variant: primary
-    - text: Ver no GitHub
-      link: https://github.com/alexabreup/manual-iothub-eletromidia
-      icon: external
-      variant: minimal
 ---
 
 

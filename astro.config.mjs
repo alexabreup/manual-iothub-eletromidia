@@ -17,9 +17,6 @@ export default defineConfig({
       logo: {
         src: './src/assets/logo.svg',
       },
-      social: {
-        github: 'https://github.com/alexabreup/manual-iothub-eletromidia',
-      },
       sidebar: [
         {
           label: 'Documentação',
