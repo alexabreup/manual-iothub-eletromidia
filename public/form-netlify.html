@@ -1,33 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Formulário Netlify</title>
+    <meta charset="UTF-8">
+    <title>Formulário de Detecção Netlify</title>
 </head>
-<body style="display: none;">
-    <!-- Formulário oculto para o Netlify detectar -->
-    <form name="contato-smart-regua" netlify netlify-recaptcha>
-        <input type="text" name="nome" />
-        <input type="email" name="email" />
-        <input type="text" name="empresa" />
-        <input type="tel" name="telefone" />
-        <select name="assunto">
-            <option value="suporte-tecnico">Suporte Técnico</option>
-            <option value="duvida-manual">Dúvida sobre o Manual</option>
-            <option value="problema-smart-regua">Problema com SMART RÉGUA</option>
-            <option value="problema-conectividade">Problema de Conectividade</option>
-            <option value="comando-reset">Problema com Comando Reset</option>
-            <option value="cadastro-automatico">Cadastro Automático</option>
-            <option value="sugestao">Sugestão de Melhoria</option>
-            <option value="outro">Outro</option>
+<body>
+    <h1>Formulário para Detecção do Netlify</h1>
+    <p>Este formulário é usado pelo Netlify para detectar os campos durante o build.</p>
+    
+    <!-- Formulário para o Netlify detectar -->
+    <form name="contato-smart-regua" method="POST" data-netlify="true" data-netlify-recaptcha="true" action="/obrigado.html">
+        <input type="hidden" name="form-name" value="contato-smart-regua" />
+        
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required />
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        
+        <label for="empresa">Empresa:</label>
+        <input type="text" id="empresa" name="empresa" />
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" />
+        
+        <label for="assunto">Assunto:</label>
+        <select id="assunto" name="assunto" required>
+            <option value="">Selecione o assunto</option>
+            <option value="suporte-tecnico">🔧 Suporte Técnico</option>
+            <option value="duvida-manual">📖 Dúvida sobre o Manual</option>
+            <option value="problema-smart-regua">⚠️ Problema com SMART RÉGUA</option>
+            <option value="problema-conectividade">🌐 Problema de Conectividade</option>
+            <option value="comando-reset">🔄 Problema com Comando Reset</option>
+            <option value="cadastro-automatico">📝 Cadastro Automático</option>
+            <option value="sugestao">💡 Sugestão de Melhoria</option>
+            <option value="outro">❓ Outro</option>
         </select>
-        <select name="prioridade">
-            <option value="baixa">Baixa</option>
-            <option value="media">Média</option>
-            <option value="alta">Alta</option>
-            <option value="critica">Crítica</option>
+        
+        <label for="prioridade">Prioridade:</label>
+        <select id="prioridade" name="prioridade">
+            <option value="baixa">🟢 Baixa - Dúvida geral</option>
+            <option value="media" selected>🟡 Média - Problema não crítico</option>
+            <option value="alta">🟠 Alta - Problema afeta operação</option>
+            <option value="critica">🔴 Crítica - Sistema inoperante</option>
         </select>
-        <textarea name="mensagem"></textarea>
+        
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required rows="6"></textarea>
+        
         <div data-netlify-recaptcha="true"></div>
+        
+        <button type="submit">Enviar</button>
     </form>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background: #ff5e00;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        button:hover {
+            background: #cc4a00;
+        }
+        
+        h1 {
+            color: #ff5e00;
+        }
+    </style>
 </body>
 </html>
